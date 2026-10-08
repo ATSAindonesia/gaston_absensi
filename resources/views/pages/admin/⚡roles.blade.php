@@ -99,7 +99,7 @@ new #[Layout('layouts::admin')] #[Title('Pengaturan Role')] class extends Compon
 
             <div class="space-y-3">
                 @forelse ($this->users as $u)
-                    <div class="flex flex-col gap-3 rounded-lg border border-neutral-200 p-4 dark:border-neutral-700 sm:flex-row sm:items-center sm:justify-between">
+                    <div class="flex flex-col gap-3 rounded-lg border border-neutral-200 p-4 dark:border-white/10 dark:bg-ash sm:flex-row sm:items-center sm:justify-between">
                         <div class="space-y-1">
                             <div class="flex items-center gap-2">
                                 <span class="font-medium text-zinc-900 dark:text-zinc-100">{{ $u->name }}</span>

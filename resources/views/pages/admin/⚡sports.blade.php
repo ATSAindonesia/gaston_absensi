@@ -216,7 +216,7 @@ new #[Layout('layouts::admin')] #[Title('Kelola Cabor & Lapangan')] class extend
 
         <div class="space-y-4">
             @forelse ($this->sports as $sport)
-                <div class="rounded-xl border border-neutral-200 bg-white p-5 dark:border-neutral-700 dark:bg-zinc-900" wire:key="sport-{{ $sport->id }}">
+                <div class="rounded-xl border border-neutral-200 bg-white p-5 dark:border-white/10 dark:bg-ash" wire:key="sport-{{ $sport->id }}">
                     <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                         <div class="flex flex-wrap items-center gap-2">
                             <span class="text-base font-semibold text-zinc-900 dark:text-zinc-100">{{ $sport->name }}</span>
@@ -233,9 +233,9 @@ new #[Layout('layouts::admin')] #[Title('Kelola Cabor & Lapangan')] class extend
                         </div>
                     </div>
 
-                    <div class="mt-4 space-y-2 border-t border-neutral-100 pt-4 dark:border-neutral-800">
+                    <div class="mt-4 space-y-2 border-t border-neutral-100 pt-4 dark:border-white/10">
                         @forelse ($sport->courts as $court)
-                            <div class="flex items-center justify-between gap-3 rounded-lg border border-neutral-200 p-3 text-sm dark:border-neutral-700" wire:key="court-{{ $court->id }}">
+                            <div class="flex items-center justify-between gap-3 rounded-lg border border-neutral-200 p-3 text-sm dark:border-white/10" wire:key="court-{{ $court->id }}">
                                 <span class="font-medium text-zinc-900 dark:text-zinc-100">{{ $court->name }}</span>
                                 <flux:modal.trigger name="court-delete">
                                     <flux:button size="sm" variant="danger" wire:click="confirmDeleteCourt({{ $court->id }})" data-test="delete-court-{{ $court->id }}">{{ __('Hapus') }}</flux:button>
@@ -254,7 +254,7 @@ new #[Layout('layouts::admin')] #[Title('Kelola Cabor & Lapangan')] class extend
                     </div>
                 </div>
             @empty
-                <div class="rounded-xl border border-neutral-200 bg-white p-8 text-center text-sm text-zinc-500 dark:border-neutral-700 dark:bg-zinc-900 dark:text-zinc-400">
+                <div class="rounded-xl border border-neutral-200 bg-white p-8 text-center text-sm text-zinc-500 dark:border-white/10 dark:bg-ash dark:text-zinc-400">
                     {{ __('Belum ada cabang olahraga. Tambahkan yang pertama.') }}
                 </div>
             @endforelse

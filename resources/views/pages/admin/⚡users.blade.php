@@ -96,9 +96,9 @@ new #[Layout('layouts::admin')] #[Title('Informasi Pengguna')] class extends Com
             </div>
         </div>
 
-        <div class="overflow-x-auto rounded-xl border border-neutral-200 bg-white dark:border-neutral-700 dark:bg-zinc-900">
-            <table class="min-w-full divide-y divide-neutral-200 dark:divide-neutral-700 text-sm">
-                <thead class="bg-neutral-50 dark:bg-zinc-800/50">
+        <div class="overflow-x-auto rounded-xl border border-neutral-200 bg-white dark:border-white/10 dark:bg-ash">
+            <table class="min-w-full divide-y divide-neutral-200 dark:divide-white/10 text-sm">
+                <thead class="bg-neutral-50 dark:bg-white/5">
                     <tr>
                         <th class="px-6 py-3.5 text-left font-semibold text-zinc-900 dark:text-zinc-100">{{ __('Kode') }}</th>
                         <th class="px-6 py-3.5 text-left font-semibold text-zinc-900 dark:text-zinc-100">{{ __('Nama') }}</th>
@@ -107,9 +107,9 @@ new #[Layout('layouts::admin')] #[Title('Informasi Pengguna')] class extends Com
                         <th class="px-6 py-3.5 text-left font-semibold text-zinc-900 dark:text-zinc-100">{{ __('Terdaftar') }}</th>
                     </tr>
                 </thead>
-                <tbody class="divide-y divide-neutral-200 dark:divide-neutral-700">
+                <tbody class="divide-y divide-neutral-200 dark:divide-white/10">
                     @forelse ($this->users as $u)
-                        <tr class="hover:bg-neutral-50/50 dark:hover:bg-zinc-800/50">
+                        <tr class="hover:bg-neutral-50/50 dark:hover:bg-white/10">
                             <td class="px-6 py-4 font-mono text-xs font-medium text-zinc-900 dark:text-zinc-100">{{ $u->member_code ?? '-' }}</td>
                             <td class="px-6 py-4 font-medium text-zinc-900 dark:text-zinc-100">{{ $u->name }}</td>
                             <td class="px-6 py-4 text-zinc-600 dark:text-zinc-400">{{ $u->email }}</td>

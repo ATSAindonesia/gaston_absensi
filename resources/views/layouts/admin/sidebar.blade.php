@@ -3,9 +3,9 @@
     <head>
         @include('partials.head')
     </head>
-    <body class="min-h-screen bg-mist dark:bg-zinc-800">
+    <body class="dark-body min-h-screen bg-mist dark:bg-coal">
         <div class="brand-strip h-1 w-full" aria-hidden="true"></div>
-        <flux:sidebar sticky collapsible="mobile" class="border-e border-silver/60 bg-mist dark:border-zinc-700 dark:bg-zinc-900">
+        <flux:sidebar sticky collapsible="mobile" class="dark-surface border-e border-silver/60 bg-mist dark:border-white/10 dark:bg-ash">
             <flux:sidebar.header>
                 <x-app-logo :sidebar="true" href="{{ route('admin.dashboard') }}" wire:navigate />
                 <flux:sidebar.collapse class="lg:hidden" />

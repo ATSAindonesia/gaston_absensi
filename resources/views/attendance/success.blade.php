@@ -15,7 +15,7 @@
             </flux:subheading>
         </div>
 
-        <dl class="w-full space-y-2 rounded-xl bg-neutral-50 p-4 text-left text-sm dark:bg-zinc-800">
+        <dl class="w-full space-y-2 rounded-xl bg-neutral-50 p-4 text-left text-sm dark:bg-white/5">
             <div class="flex justify-between gap-3">
                 <dt class="text-zinc-500 dark:text-zinc-400">{{ __('Sesi') }}</dt>
                 <dd class="font-medium text-zinc-900 dark:text-zinc-100">{{ $session->name }}</dd>

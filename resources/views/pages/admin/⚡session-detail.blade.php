@@ -353,7 +353,7 @@ new #[Layout('layouts::admin')] #[Title('Detail Sesi')] class extends Component 
     </div>
 
     @if (! $this->isReadOnly)
-    <div class="rounded-xl border border-silver/60 bg-white p-5 dark:border-neutral-700 dark:bg-zinc-900">
+    <div class="rounded-xl border border-silver/60 bg-white p-5 dark:border-white/10 dark:bg-ash">
             <flux:heading size="lg">{{ __('Tambahkan Anggota') }}</flux:heading>
             <flux:subheading>{{ __('Centang beberapa pengguna lalu daftarkan sekaligus. Anggota yang bentrok jam disembunyikan otomatis. Penambahan di tengah sesi aktif diperbolehkan.') }}</flux:subheading>
 
@@ -364,7 +364,7 @@ new #[Layout('layouts::admin')] #[Title('Detail Sesi')] class extends Component 
             <form wire:submit="addBulkParticipants" class="mt-4 space-y-3">
                 <div class="max-h-64 space-y-2 overflow-y-auto">
                     @forelse ($this->availableUsers as $available)
-                        <label class="flex items-center gap-3 rounded-lg border border-silver/60 p-3 text-sm dark:border-neutral-700" wire:key="available-{{ $available->id }}">
+                        <label class="flex items-center gap-3 rounded-lg border border-silver/60 p-3 text-sm dark:border-white/10" wire:key="available-{{ $available->id }}">
                             <input type="checkbox" wire:model.live="selectedUsers" value="{{ $available->id }}" class="size-4 rounded" data-test="bulk-{{ $available->id }}" />
                             <span class="flex-1">
                                 <span class="block font-mono text-xs font-medium text-zinc-900 dark:text-zinc-100">{{ $available->member_code ?? '-' }}</span>
@@ -385,7 +385,7 @@ new #[Layout('layouts::admin')] #[Title('Detail Sesi')] class extends Component 
     @endif
 
     <!-- Tabel peserta -->
-    <div class="rounded-xl border border-silver/60 bg-white dark:border-neutral-700 dark:bg-zinc-900">
+    <div class="rounded-xl border border-silver/60 bg-white dark:border-white/10 dark:bg-ash">
         <div class="flex flex-col gap-3 p-5 sm:flex-row sm:items-center sm:justify-between">
             <div>
                 <flux:heading size="lg">{{ __('Peserta Sesi') }} ({{ $this->participants->total() }})</flux:heading>
@@ -396,9 +396,9 @@ new #[Layout('layouts::admin')] #[Title('Detail Sesi')] class extends Component 
             </div>
         </div>
 
-        <div class="overflow-x-auto border-t border-silver/60 dark:border-neutral-700">
-            <table class="min-w-full divide-y divide-neutral-200 dark:divide-neutral-700 text-sm">
-                <thead class="bg-neutral-50 dark:bg-zinc-800/50">
+        <div class="overflow-x-auto border-t border-silver/60 dark:border-white/10">
+            <table class="min-w-full divide-y divide-neutral-200 dark:divide-white/10 text-sm">
+                <thead class="bg-neutral-50 dark:bg-white/5">
                     <tr>
                         <th class="px-6 py-3.5 text-left font-semibold text-zinc-900 dark:text-zinc-100">{{ __('Nama') }}</th>
                         <th class="px-6 py-3.5 text-left font-semibold text-zinc-900 dark:text-zinc-100">{{ __('Kode') }}</th>
@@ -408,7 +408,7 @@ new #[Layout('layouts::admin')] #[Title('Detail Sesi')] class extends Component 
                         @endif
                     </tr>
                 </thead>
-                <tbody class="divide-y divide-neutral-200 dark:divide-neutral-700">
+                <tbody class="divide-y divide-neutral-200 dark:divide-white/10">
                     @php($attendedScans = $this->attendedScans)
                     @forelse ($this->participants as $p)
                         <tr wire:key="participant-{{ $p->id }}">

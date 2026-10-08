@@ -76,7 +76,8 @@ new #[Layout('layouts::admin')] #[Title('Dashboard Admin')] class extends Compon
     </div>
 
     <div class="grid gap-4 sm:grid-cols-3">
-        <div class="relative overflow-hidden rounded-xl border border-neutral-200 bg-white p-5 dark:border-neutral-700 dark:bg-zinc-900">
+        <div class="relative overflow-hidden rounded-xl border border-neutral-200 bg-white p-5 dark:border-white/10 dark:bg-ash">
+            <span class="dark-card-red-top absolute inset-x-0 top-0 hidden h-0.5 dark:block" aria-hidden="true"></span>
             <div class="flex items-start justify-between gap-3">
                 <div>
                     <div class="text-xs text-zinc-500 dark:text-zinc-400">{{ __('Total Sesi') }}</div>
@@ -88,7 +89,8 @@ new #[Layout('layouts::admin')] #[Title('Dashboard Admin')] class extends Compon
             </div>
             <span class="pointer-events-none absolute inset-x-0 bottom-0 h-0.5 bg-blue-500/70" aria-hidden="true"></span>
         </div>
-        <div class="relative overflow-hidden rounded-xl border border-neutral-200 bg-white p-5 dark:border-neutral-700 dark:bg-zinc-900">
+        <div class="relative overflow-hidden rounded-xl border border-neutral-200 bg-white p-5 dark:border-white/10 dark:bg-ash">
+            <span class="dark-card-red-top absolute inset-x-0 top-0 hidden h-0.5 dark:block" aria-hidden="true"></span>
             <div class="flex items-start justify-between gap-3">
                 <div>
                     <div class="text-xs text-zinc-500 dark:text-zinc-400">{{ __('Total Pengguna') }}</div>
@@ -100,7 +102,8 @@ new #[Layout('layouts::admin')] #[Title('Dashboard Admin')] class extends Compon
             </div>
             <span class="pointer-events-none absolute inset-x-0 bottom-0 h-0.5 bg-violet-500/70" aria-hidden="true"></span>
         </div>
-        <div class="relative overflow-hidden rounded-xl border border-neutral-200 bg-white p-5 dark:border-neutral-700 dark:bg-zinc-900">
+        <div class="relative overflow-hidden rounded-xl border border-neutral-200 bg-white p-5 dark:border-white/10 dark:bg-ash">
+            <span class="dark-card-red-top absolute inset-x-0 top-0 hidden h-0.5 dark:block" aria-hidden="true"></span>
             <div class="flex items-start justify-between gap-3">
                 <div>
                     <div class="text-xs text-zinc-500 dark:text-zinc-400">{{ __('Total Peserta Terdaftar') }}</div>
@@ -132,7 +135,7 @@ new #[Layout('layouts::admin')] #[Title('Dashboard Admin')] class extends Compon
             </div>
         </div>
     @else
-        <div class="rounded-xl border border-neutral-200 bg-white p-5 dark:border-neutral-700 dark:bg-zinc-900">
+        <div class="rounded-xl border border-neutral-200 bg-white p-5 dark:border-white/10 dark:bg-ash">
             <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                 <p class="text-sm text-zinc-500 dark:text-zinc-400">
                     {{ __('Tidak ada sesi aktif. Buat dan mulai sesi dari halaman Kelola Sesi.') }}
@@ -145,13 +148,14 @@ new #[Layout('layouts::admin')] #[Title('Dashboard Admin')] class extends Compon
     @endif
 
     <div class="grid gap-6 lg:grid-cols-2">
-        <div class="rounded-xl border border-neutral-200 bg-white p-5 dark:border-neutral-700 dark:bg-zinc-900">
+        <div class="relative overflow-hidden rounded-xl border border-neutral-200 bg-white p-5 dark:border-white/10 dark:bg-ash">
+            <span class="dark-card-red-top absolute inset-x-0 top-0 hidden h-0.5 dark:block" aria-hidden="true"></span>
             <flux:heading size="lg">{{ __('Sesi Mendatang') }}</flux:heading>
             <flux:subheading>{{ __('Jadwal terdekat yang belum dimulai.') }}</flux:subheading>
 
             <div class="mt-4 space-y-2">
                 @forelse ($this->upcomingSessions as $upcoming)
-                    <a href="{{ route('admin.sessions.show', $upcoming) }}" wire:navigate class="flex items-center justify-between gap-3 rounded-lg border border-neutral-200 p-3 hover:bg-neutral-50 dark:border-neutral-700 dark:hover:bg-zinc-800" wire:key="upcoming-{{ $upcoming->id }}">
+                    <a href="{{ route('admin.sessions.show', $upcoming) }}" wire:navigate class="flex items-center justify-between gap-3 rounded-lg border border-neutral-200 p-3 hover:bg-neutral-50 dark:border-white/10 dark:hover:bg-white/10" wire:key="upcoming-{{ $upcoming->id }}">
                         <div class="text-sm">
                             <div class="font-medium text-zinc-900 dark:text-zinc-100">{{ $upcoming->name }}</div>
                             <div class="text-xs text-zinc-500 dark:text-zinc-400">{{ $upcoming->court?->name ?? '-' }} · {{ $upcoming->starts_at->format('d M Y H:i') }}</div>
@@ -164,7 +168,8 @@ new #[Layout('layouts::admin')] #[Title('Dashboard Admin')] class extends Compon
             </div>
         </div>
 
-        <div class="rounded-xl border border-neutral-200 bg-white p-5 dark:border-neutral-700 dark:bg-zinc-900">
+        <div class="relative overflow-hidden rounded-xl border border-neutral-200 bg-white p-5 dark:border-white/10 dark:bg-ash">
+            <span class="dark-card-red-top absolute inset-x-0 top-0 hidden h-0.5 dark:block" aria-hidden="true"></span>
             <flux:heading size="lg">{{ __('Aksi Cepat') }}</flux:heading>
             <flux:subheading>{{ __('Navigasi ke halaman pengelolaan.') }}</flux:subheading>
 

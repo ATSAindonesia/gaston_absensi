@@ -3,7 +3,7 @@
         <div id="qr-reader-wrap" class="hidden w-full max-w-sm flex-col items-center gap-2">
             <div
                 id="qr-reader"
-                class="w-full overflow-hidden rounded-xl border border-silver/60 bg-black dark:border-neutral-700"
+                class="w-full overflow-hidden rounded-xl border border-silver/60 bg-black dark:border-white/10"
                 style="min-height: 300px;"
             ></div>
 
@@ -13,7 +13,7 @@
 
             <select
                 id="camera-select"
-                class="hidden w-full rounded-lg border border-silver/60 bg-white px-3 py-2 text-sm text-zinc-900 dark:border-neutral-700 dark:bg-zinc-900 dark:text-zinc-100"
+                class="hidden w-full rounded-lg border border-silver/60 bg-white px-3 py-2 text-sm text-zinc-900 dark:border-white/10 dark:bg-ash dark:text-zinc-100"
             ></select>
         </div>
 
@@ -22,7 +22,7 @@
         <button
             type="button"
             id="btn-start-camera"
-            class="h-40 w-40 rounded-lg border border-silver/60 bg-white text-sm font-medium text-zinc-900 dark:border-neutral-700 dark:bg-zinc-900 dark:text-zinc-100"
+            class="h-40 w-40 rounded-lg border border-silver/60 bg-white text-sm font-medium text-zinc-900 dark:border-white/10 dark:bg-ash dark:text-zinc-100"
         >
             {{ __('Mulai Kamera') }}
         </button>
@@ -30,7 +30,7 @@
         <button
             type="button"
             id="btn-cancel-camera"
-            class="hidden rounded-lg border border-silver/60 bg-white px-6 py-2 text-sm font-medium text-zinc-900 dark:border-neutral-700 dark:bg-zinc-900 dark:text-zinc-100"
+            class="hidden rounded-lg border border-silver/60 bg-white px-6 py-2 text-sm font-medium text-zinc-900 dark:border-white/10 dark:bg-ash dark:text-zinc-100"
         >
             {{ __('Batal') }}
         </button>

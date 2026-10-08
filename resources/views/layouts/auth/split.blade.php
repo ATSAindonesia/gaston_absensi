@@ -3,11 +3,11 @@
     <head>
         @include('partials.head')
     </head>
-    <body class="min-h-screen bg-mist antialiased dark:bg-linear-to-b dark:from-neutral-950 dark:to-neutral-900">
+    <body class="min-h-screen bg-mist antialiased dark:bg-linear-to-b dark:from-[#1e1e1e] dark:to-[#3a3a3a]">
         <div class="brand-strip h-1 w-full" aria-hidden="true"></div>
         <div class="relative grid h-dvh flex-col items-center justify-center px-8 sm:px-0 lg:max-w-none lg:grid-cols-2 lg:px-0">
-            <div class="bg-muted relative hidden h-full flex-col p-10 text-white lg:flex dark:border-e dark:border-neutral-800">
-                <div class="absolute inset-0 bg-neutral-900"></div>
+            <div class="bg-muted dark-surface relative hidden h-full flex-col p-10 text-white lg:flex dark:border-e dark:border-white/10">
+                <div class="absolute inset-0 bg-[#1e1e1e] dark:bg-transparent"></div>
                 <div class="brand-strip absolute inset-x-0 top-0 h-1" aria-hidden="true"></div>
                 <a href="{{ route('home') }}" class="relative z-20 flex items-center text-lg font-medium" wire:navigate>
                     <span class="logo-chip flex h-10 w-10 items-center justify-center overflow-hidden rounded-md p-1">

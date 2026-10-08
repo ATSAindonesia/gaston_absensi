@@ -543,7 +543,7 @@ new #[Layout('layouts::admin')] #[Title('Kelola Sesi')] class extends Component
             @php($isOwner = (int) $s->created_by === (int) auth()->id())
             @php($statusColor = $s->status === \App\Enums\SessionStatus::Soon ? 'amber' : $s->status->color())
             {{-- Session card: header (title + contextual badges) / body (icon metadata grid) / footer (action bar). --}}
-            <article aria-labelledby="session-title-{{ $s->id }}" class="flex flex-col gap-4 rounded-2xl border border-neutral-200 bg-white p-5 dark:border-zinc-800 dark:bg-zinc-900" wire:key="session-card-{{ $s->id }}">
+            <article aria-labelledby="session-title-{{ $s->id }}" class="flex flex-col gap-4 rounded-2xl border border-neutral-200 bg-white p-5 dark:border-white/10 dark:bg-ash" wire:key="session-card-{{ $s->id }}">
                 {{-- Header zone: title + ownership pill, contextual status/type badges share one anchor. --}}
                 <header class="flex flex-wrap items-start justify-between gap-3">
                     <div class="flex min-w-0 flex-wrap items-center gap-2">
@@ -565,7 +565,7 @@ new #[Layout('layouts::admin')] #[Title('Kelola Sesi')] class extends Component
                 </header>
 
                 {{-- Body zone: cohesive icon-label-value metadata grid (2 columns on sm+). --}}
-                <dl class="grid grid-cols-1 gap-3 border-t border-neutral-100 pt-4 sm:grid-cols-2 dark:border-zinc-800">
+                <dl class="grid grid-cols-1 gap-3 border-t border-neutral-100 pt-4 sm:grid-cols-2 dark:border-white/10">
                     <div class="flex items-start gap-2.5">
                         <svg class="mt-0.5 size-4 shrink-0 text-zinc-400 dark:text-zinc-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" /><circle cx="12" cy="10" r="3" /></svg>
                         <div class="min-w-0">
@@ -597,7 +597,7 @@ new #[Layout('layouts::admin')] #[Title('Kelola Sesi')] class extends Component
                 </dl>
 
                 {{-- Footer zone: max 2 visible buttons (primary contextual + secondary) + overflow menu for destructive actions. --}}
-                <footer class="flex flex-wrap items-center justify-end gap-2 border-t border-neutral-100 pt-3 dark:border-zinc-800">
+                <footer class="flex flex-wrap items-center justify-end gap-2 border-t border-neutral-100 pt-3 dark:border-white/10">
                     @if ($canManage && $s->status === \App\Enums\SessionStatus::Soon)
                         {{-- Primary state action: solid, stands out. --}}
                         <flux:button size="sm" variant="primary" wire:click="startSession({{ $s->id }})" data-test="start-{{ $s->id }}">{{ __('Mulai') }}</flux:button>
@@ -640,7 +640,7 @@ new #[Layout('layouts::admin')] #[Title('Kelola Sesi')] class extends Component
                 </footer>
             </article>
         @empty
-            <div class="rounded-2xl border border-neutral-200 bg-white p-8 text-center text-sm text-zinc-500 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-400">
+            <div class="rounded-2xl border border-neutral-200 bg-white p-8 text-center text-sm text-zinc-500 dark:border-white/10 dark:bg-ash dark:text-zinc-400">
                 {{ __('Belum ada sesi. Buat sesi pertama.') }}
             </div>
         @endforelse

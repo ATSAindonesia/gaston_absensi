@@ -13,8 +13,11 @@
 
     --color-brand: #d8231e;
     --color-brand-deep: #8c1311;
-    --color-mist: #f4f6f8;
-    --color-silver: #b8c5ce;
+    --color-brand-bright: #ff4438;
+    --color-coal: #1e1e1e;
+    --color-ash: #3a3a3a;
+    --color-mist: #f8f9fa;
+    --color-silver: #e9ecef;
     --color-ink-soft: #4a5560;
 
     --color-zinc-50: #fafafa;
@@ -82,6 +85,28 @@ select:focus[data-flux-control] {
 
 .sidebar-current svg {
     color: var(--color-brand);
+}
+
+.dark .sidebar-current svg {
+    color: var(--color-brand-bright);
+}
+
+/* Dark mode Gaston: gradasi #1e1e1e -> #3a3a3a, hanya aktif saat .dark. */
+.dark .dark-body {
+    background-image: linear-gradient(180deg, #1e1e1e 0%, #232323 60%, #2b2b2b 100%);
+}
+
+.dark .dark-surface {
+    background-image: linear-gradient(180deg, #3a3a3a 0%, #323232 60%, #2c2c2c 100%);
+}
+
+/* Aksen merah di atas card dark agar brand tetap hadir. */
+.dark-card-red-top {
+    background-image: linear-gradient(to right, var(--color-brand), var(--color-brand-deep));
+}
+
+.dark .dark-card-red-top {
+    background-image: linear-gradient(to right, var(--color-brand-bright), var(--color-brand-deep));
 }
 
 .scan-frame-active {
